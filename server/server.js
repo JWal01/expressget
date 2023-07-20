@@ -2,7 +2,7 @@
 
 let express = require('express');
 let app = express();
-const port = 5001
+const port = 5001;
 
 const quoteList = require('./quoteList');
 
