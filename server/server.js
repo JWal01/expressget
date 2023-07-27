@@ -26,12 +26,26 @@ app.get('/quotes', function(req, res){
   res.send(quoteList)
 })
 
+
 app.post('/quotes', (req, res) => {
   console.log('get a POST request.', req.body);
 
   let quote = req.body
   quoteList.push(quote)
   res.sendStatus(201);
+})
+
+app.delete('/quotes/:index', (req , res) => {
+  console.log('Delete request!' , req.body);
+  console.log(req.params);
+
+  let index = req.params.index
+
+  //delete quoteList[index]
+  quoteList.splice(index , index)
+
+  res.sendStatus(201)
+
 })
 
 //sets up server that runs continuously
