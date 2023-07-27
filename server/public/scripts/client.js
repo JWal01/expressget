@@ -51,3 +51,31 @@ function submitForm(event){
     alert('Something Went Wrong')
   })
 }
+
+let temperatures = [-2 , 5, 90 , 75, -12, -37 , 49];
+
+let shoes = [
+  { color: 'red', size: 8, type: 'running' },
+  { color: 'gray', size: 7, type: 'sandle' },
+  { color: 'yellow', size: 10, type: 'boot' },
+  { color: 'green', size: 9, type: 'running' },
+];
+
+function freezingTemps(temp){
+  // only keeps temps below 32 degrees
+  return temp < 32
+}
+
+let belowFreezingTemps = temperatures.filter(freezingTemps)
+// console.log(belowFreezingTemps);
+// console.log(temperatures);
+
+function runningShoes(shoe){
+  return shoe.type === 'running'
+}
+
+runningShoes(shoes);
+
+console.log(shoes);
+let runningShoesList = shoes.filter(runningShoes)
+console.log('list', runningShoesList);
